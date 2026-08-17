@@ -1,0 +1,10 @@
+# Dependências de execução
+anthropic>=0.122,<0.123    # SDK oficial. 0.x: o número do meio é o slot de quebra.
+pydantic>=2.13,<3          # validação nas fronteiras (ADR-001)
+python-dotenv>=1.2,<2      # lê o .env para dentro do ambiente
+
+# Ferramentas de desenvolvimento
+# Ficam aqui junto porque nas Fases 0-3 a Sexta só roda local (ADR-006):
+# não existe "servidor de produção" onde instalar menos coisa.
+# Quando existir, isto vira requirements-dev.txt.
+mypy>=2.3,<3               # verificador de tipos, --strict desde o commit 1

@@ -1,0 +1,20 @@
+[tool.mypy]
+python_version = "3.14"
+files = ["friday"]
+
+# ADR-001: estrito desde o primeiro commit.
+# Liga ~15 verificações de uma vez. As três que mais aparecem no dia a dia:
+#   disallow_untyped_defs  — toda função precisa de anotação, sem exceção
+#   disallow_any_generics  — `list` sozinho é erro; tem que ser `list[str]`
+#   no_implicit_optional   — `def f(x: str = None)` é erro; se aceita None, declare
+strict = true
+
+# NÃO vem no strict — precisa ser pedido à parte.
+# Aponta código que o mypy provou ser inalcançável, o que quase sempre
+# significa que a condição acima dele está errada.
+warn_unreachable = true
+
+# O pydantic gera __init__ dinamicamente, em tempo de execução. Sem este
+# plugin o mypy não enxerga a assinatura gerada e aceita construções
+# inválidas de modelo em silêncio.
+plugins = ["pydantic.mypy"]

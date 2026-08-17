@@ -48,7 +48,7 @@ ADR-002 (banco relacional) · ADR-003 (vetorial) · ADR-004 (recuperação de me
 
 ## PRINCÍPIOS QUE MAIS PESAM NO DIA A DIA
 
-- **P1 — O sistema importa mais que o modelo.** O LLM é componente substituível. Nenhum arquivo fora de `sexta/llm.py` importa o SDK direto.
+- **P1 — O sistema importa mais que o modelo.** O LLM é componente substituível. Nenhum arquivo fora de `friday/llm.py` importa o SDK direto.
 - **P3 — O LLM pede, o sistema decide.** Nunca `LLM → shell`. Sempre `LLM → tool request → policy → executor`.
 - **P6 — Estado estruturado, não histórico bruto.** Não empurrar a conversa inteira para o contexto.
 - **Segredo nunca no código.** Chave de API vive no `.env`, que vive fora do git.
@@ -70,7 +70,7 @@ ADR-002 (banco relacional) · ADR-003 (vetorial) · ADR-004 (recuperação de me
 ## ESTRUTURA
 
 ```
-sexta/
+friday/
 ├── models.py   Mensagem, Conversa (pydantic)
 ├── llm.py      LLMProvider (interface) + implementação Anthropic
 ├── store.py    ConversationStore (interface) + implementação JSON
@@ -89,6 +89,9 @@ Persistência em **arquivo JSON**, não banco — o ADR-002 está em aberto e se
 source .venv/bin/activate     # Mac/Linux
 
 pip install -r requirements.txt
-python -m sexta.main
-mypy sexta/
+python -m friday.main
+mypy friday/
 ```
+
+O pacote no disco é `friday/`; o nome da entidade continua **Sexta-Feira**. São coisas
+diferentes de propósito — o caminho do código não precisa carregar o nome do produto.
