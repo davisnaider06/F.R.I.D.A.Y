@@ -4,6 +4,8 @@ IA pessoal persistente e agentiva. Não é um chatbot — é uma entidade contí
 
 **Documento-mestre:** `docs/THINKING_SYSTEM.md`. Leia antes de qualquer decisão de arquitetura.
 
+**Onde a construção parou:** `docs/ESTADO.md`. Leia **primeiro**, ao abrir uma sessão nova — ele diz o que já funciona, quais decisões de implementação já foram tomadas (com o porquê) e qual é a próxima linha a escrever. Atualize-o ao fim de cada sessão de trabalho.
+
 ---
 
 ## COMO TRABALHAR COM O DAVI
@@ -77,6 +79,7 @@ friday/
 └── main.py     o loop
 docs/
 ├── THINKING_SYSTEM.md
+├── ESTADO.md   onde a construção parou — atualizar ao fim de cada sessão
 └── adr/
 ```
 
