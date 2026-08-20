@@ -216,3 +216,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# Sexta-Feira
+# ---------------------------------------------------------------------------
+
+# A memória dela. Fica FORA do git de propósito, por três motivos:
+#  1. é conteúdo privado de conversa, não código;
+#  2. muda a cada mensagem — poluiria o histórico do git com ruído;
+#  3. é estado da MÁQUINA, não do projeto. Duas máquinas com a mesma conversa
+#     versionada dariam conflito de merge em cima da memória dela, que é
+#     exatamente o tipo de coisa que não se resolve escolhendo um lado.
+# Sincronizar entre máquinas é problema da Fase 5 (ADR-006), com solução real.
+dados/
+
+# Vault do Obsidian: as NOTAS entram no git (o porquê é o produto do projeto,
+# e perdê-las custaria mais que qualquer código daqui). Só a configuração de
+# janela do app fica de fora — ela muda sozinha toda vez que você abre o
+# programa e encheria o histórico de commits vazios.
+# Para ignorar o vault inteiro, troque as duas linhas abaixo por:  F.R.I.D.A.Y Brain/
+F.R.I.D.A.Y Brain/.obsidian/workspace*
+F.R.I.D.A.Y Brain/.obsidian/cache

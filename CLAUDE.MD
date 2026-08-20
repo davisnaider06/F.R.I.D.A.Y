@@ -88,13 +88,21 @@ Persistência em **arquivo JSON**, não banco — o ADR-002 está em aberto e se
 ## COMANDOS
 
 ```bash
-.venv\Scripts\activate        # Windows
-source .venv/bin/activate     # Mac/Linux
+# Ativar o venv — a forma MUDA conforme o terminal:
+.\.venv\Scripts\Activate.ps1   # PowerShell (o `.\` na frente é obrigatório)
+.venv\Scripts\activate.bat     # cmd.exe
+source .venv/bin/activate      # Mac/Linux
 
 pip install -r requirements.txt
 python -m friday.main
+python -m friday.modelos       # lista os modelos que a sua chave enxerga
 mypy friday/
 ```
+
+Sem ativar, `python` é o do sistema e nada disso funciona — o sintoma é
+`ModuleNotFoundError`, que parece falta de instalação e não é. Alternativa sem
+ativar, funciona em qualquer terminal:
+`.\.venv\Scripts\python.exe -m friday.main`
 
 O pacote no disco é `friday/`; o nome da entidade continua **Sexta-Feira**. São coisas
 diferentes de propósito — o caminho do código não precisa carregar o nome do produto.

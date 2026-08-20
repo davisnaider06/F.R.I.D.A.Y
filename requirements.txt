@@ -1,5 +1,6 @@
 # Dependências de execução
 anthropic>=0.122,<0.123    # SDK oficial. 0.x: o número do meio é o slot de quebra.
+google-genai>=2.19,<3     # SDK do Gemini. Segundo provider, atrás da mesma interface.
 pydantic>=2.13,<3          # validação nas fronteiras (ADR-001)
 python-dotenv>=1.2,<2      # lê o .env para dentro do ambiente
 
